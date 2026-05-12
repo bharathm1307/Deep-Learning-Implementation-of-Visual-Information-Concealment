@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Steganography Detector Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+<div class="container">
+    <h1>Steganography Detection Dashboard</h1>
+
+    <div class="upload-card">
+        <h2>Upload Image</h2>
+        <input type="file" id="fileInput">
+        <button onclick="sendImage()">Analyze</button>
+    </div>
+
+    <div class="result-card" id="resultCard" style="display:none;">
+        <h2>Prediction Result</h2>
+        <p><b>Status:</b> <span id="prediction"></span></p>
+
+        <div class="bars">
+            <div class="bar">
+                <span>Cover</span>
+                <div class="bar-fill" id="coverBar"></div>
+            </div>
+
+            <div class="bar">
+                <span>Stego</span>
+                <div class="bar-fill stego" id="stegoBar"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+async function sendImage() {
+    const fileInput = document.getElementById("fileInput");
+    if (!fileInput.files.length) {
+        alert("Please upload an image");
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", fileInput.files[0]);
+
+    let res = await fetch("/predict", {
+        method: "POST",
+        body: formData
+    });
+
+    const data = await res.json();
+    document.getElementById("resultCard").style.display = "block";
+
+    document.getElementById("prediction").innerText = data.prediction;
+
+    let coverBar = document.getElementById("coverBar");
+    let stegoBar = document.getElementById("stegoBar");
+
+    coverBar.style.width = (data.cover_probability * 100) + "%";
+    stegoBar.style.width = (data.stego_probability * 100) + "%";
+}
+</script>
+
+</body>
+</html>

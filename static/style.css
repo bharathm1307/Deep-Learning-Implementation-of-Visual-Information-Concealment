@@ -1,0 +1,68 @@
+body {
+    background: #f0f2f5;
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 550px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.upload-card, .result-card {
+    padding: 20px;
+    border-radius: 12px;
+    background: #fafafa;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    width: 100%;
+    background: #007bff;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.bars {
+    margin-top: 20px;
+}
+
+.bar {
+    margin-top: 10px;
+}
+
+.bar span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.bar-fill {
+    height: 18px;
+    background: #2ecc71;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.bar-fill.stego {
+    background: #e74c3c;
+}
