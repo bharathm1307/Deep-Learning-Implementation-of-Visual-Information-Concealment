@@ -1,4 +1,3 @@
-````md
 # 🕵️ Deep Learning Implementation of Visual Information Concealment
 
 A Deep Learning-based steganography detection system designed to identify hidden or concealed information inside digital images using **EfficientNet-B0** architecture. The system helps detect whether an uploaded image contains hidden content (**Stego**) or is a normal image (**Cover**) using image classification techniques.
@@ -7,7 +6,7 @@ A Deep Learning-based steganography detection system designed to identify hidden
 
 ## 📌 Project Overview
 
-Steganography is a method of concealing secret information within digital media such as images, making the communication invisible to unintended users. While it can be used for secure communication, it may also be exploited for malicious purposes such as hidden data transfer and unauthorized communication.
+Steganography is a method of concealing secret information within digital media such as images, making communication invisible to unintended users. While it can be used for secure communication, it may also be exploited for malicious purposes such as hidden data transfer and unauthorized communication.
 
 This project implements a **Deep Learning-based Steganography Detection System (Steganalysis)** capable of analyzing images and predicting whether hidden information is embedded within them.
 
@@ -285,4 +284,3 @@ This project is developed for **academic purposes**.
 ## ⭐ Support
 
 If you found this project useful, consider giving it a **star ⭐ on GitHub**.
-````
