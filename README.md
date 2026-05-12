@@ -1,150 +1,193 @@
 ````md
-<div align="center">
-
 # 🕵️ Deep Learning Implementation of Visual Information Concealment
-### *A Deep Learning-Based Steganography Detection System*
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Deep%20Learning-EfficientNetB0-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Python-3.10+-yellow?style=for-the-badge&logo=python" />
-  <img src="https://img.shields.io/badge/PyTorch-Framework-red?style=for-the-badge&logo=pytorch" />
-  <img src="https://img.shields.io/badge/Frontend-Streamlit-ff4b4b?style=for-the-badge&logo=streamlit" />
-  <img src="https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi" />
-  <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Project-Team_Project-purple?style=for-the-badge" />
-</p>
+A Deep Learning-based steganography detection system designed to identify hidden or concealed information inside digital images using **EfficientNet-B0** architecture. The system helps detect whether an uploaded image contains hidden content (**Stego**) or is a normal image (**Cover**) using image classification techniques.
 
 ---
 
-## 🔍 Intelligent Hidden Information Detection Using Deep Learning
+## 📌 Project Overview
 
-*A deep learning-powered steganalysis system designed to detect concealed information in digital images using EfficientNet-B0 architecture.*
+Steganography is a method of concealing secret information within digital media such as images, making the communication invisible to unintended users. While it can be used for secure communication, it may also be exploited for malicious purposes such as hidden data transfer and unauthorized communication.
 
-</div>
+This project implements a **Deep Learning-based Steganography Detection System (Steganalysis)** capable of analyzing images and predicting whether hidden information is embedded within them.
 
----
+The system uses **EfficientNet-B0**, a powerful convolutional neural network architecture, to classify uploaded images into:
 
-# 📌 Project Overview
-
-Steganography is a technique used to conceal secret information inside digital media such as images, making the communication invisible to unauthorized users. While useful for secure communication, it can also be exploited for malicious or unauthorized data transfer.
-
-This project introduces a **Deep Learning-Based Steganography Detection System (Steganalysis)** that identifies whether an uploaded image contains hidden information.
-
-The system uses an **EfficientNet-B0 Deep Learning Model** trained for binary image classification to determine whether an image is:
-
-- ✅ **Cover Image** → No hidden information detected
+- ✅ **Cover Image** → No hidden information detected  
 - ⚠️ **Stego Image** → Hidden information detected
 
-The application includes an interactive interface for image upload, prediction, confidence analysis, and result visualization.
+The application provides a user-friendly interface for uploading images, generating predictions, and visualizing classification confidence.
 
 ---
 
-# ✨ Key Features
+## 🎯 Problem Statement
 
-✅ **Deep Learning-based Steganography Detection**  
-✅ **EfficientNet-B0 Model Architecture**  
-✅ **Binary Classification (Cover vs Stego)**  
-✅ **Interactive Image Upload Interface**  
-✅ **Prediction Confidence Analysis**  
-✅ **Real-Time Detection System**  
-✅ **Streamlit Frontend Integration**  
-✅ **FastAPI Backend Support**  
-✅ **Probability Visualization Dashboard**  
-✅ **Prediction History Tracking**
+Traditional methods for detecting hidden information in images often struggle with:
+
+- Low detection accuracy
+- Difficulty identifying concealed data patterns
+- Inefficient manual analysis
+- Limited scalability for large image datasets
+- Lack of automated detection systems
+
+This project addresses these challenges using **Deep Learning and Image Classification techniques**.
 
 ---
 
-# 🧠 Model Architecture
+## ✨ Features
 
-The project utilizes **EfficientNet-B0**, an optimized Convolutional Neural Network (CNN) architecture known for high efficiency and strong image classification performance.
+✅ Steganography detection using Deep Learning  
+✅ EfficientNet-B0 based classification model  
+✅ Binary image classification (**Cover vs Stego**)  
+✅ Interactive image upload interface  
+✅ Prediction confidence visualization  
+✅ Real-time image analysis  
+✅ Streamlit-based frontend application  
+✅ FastAPI backend integration  
+✅ User-friendly detection dashboard
+
+---
+
+## 🛠️ Tech Stack
+
+### Programming Language
+- Python
+
+### Deep Learning
+- PyTorch
+- EfficientNet-B0
+- Torchvision
+
+### Backend
+- FastAPI
+
+### Frontend
+- Streamlit
+- HTML
+- CSS
+
+### Image Processing
+- PIL (Pillow)
+
+### Data Visualization
+- Altair
+- Pandas
+- NumPy
+
+### Development Tools
+- Visual Studio Code
+- GitHub
+
+---
+
+## 📊 Model Used
+
+The system uses an **EfficientNet-B0** deep learning model trained for steganography detection.
 
 ### Classification Categories
 
-| Class | Description |
-|--------|-------------|
-| 🟢 Cover | No hidden information detected |
-| 🔴 Stego | Hidden information concealed inside the image |
+| Class | Meaning |
+|--------|----------|
+| Cover | No hidden information present |
+| Stego | Hidden information detected |
 
 The trained model file:
 
-```bash
+```text
 alaska_optionA_efficientnet.pth
-````
+```
 
-is used to classify uploaded images into **Cover** or **Stego** classes.
+is used to classify uploaded images into **Cover** or **Stego** categories.
 
 ---
 
-# 🏗️ System Workflow
+## ⚙️ System Architecture
+
+The project follows the workflow below:
 
 ```text
-User Uploads Image
-          ↓
-   Image Preprocessing
-          ↓
-   EfficientNet-B0 Model
-          ↓
-   Deep Learning Prediction
-          ↓
- Cover / Stego Classification
-          ↓
- Confidence Score Visualization
+Image Upload
+      ↓
+Image Preprocessing
+      ↓
+EfficientNet-B0 Model
+      ↓
+Prediction Generation
+      ↓
+Cover / Stego Classification
+      ↓
+Confidence Visualization
 ```
 
 ---
 
-# 🛠️ Technology Stack
+## 🔍 Workflow
 
-| Technology          | Purpose                    |
-| ------------------- | -------------------------- |
-| **Python**          | Core Programming           |
-| **PyTorch**         | Deep Learning Framework    |
-| **EfficientNet-B0** | Image Classification Model |
-| **Streamlit**       | User Interface             |
-| **FastAPI**         | Backend API                |
-| **HTML/CSS**        | Dashboard Frontend         |
-| **PIL (Pillow)**    | Image Processing           |
-| **Torchvision**     | Image Transformations      |
+1. Upload an image (`.jpg`, `.jpeg`, `.png`)
+2. The image is preprocessed and resized
+3. EfficientNet-B0 analyzes image features
+4. The trained model predicts:
+   - **Cover** → No hidden content
+   - **Stego** → Hidden content detected
+5. Results are displayed with confidence probability
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
-```bash
-📦 Deep-Learning-Implementation-of-Visual-Information-Concealment
-│── 📄 app.py
-│── 📄 main.py
-│── 📄 UI.py
-│── 📄 test_model.py
-│── 📄 alaska_optionA_efficientnet.pth
-│── 📂 templates/
+```text
+Deep-Learning-Implementation-of-Visual-Information-Concealment/
+│── app.py
+│── main.py
+│── UI.py
+│── test_model.py
+│── alaska_optionA_efficientnet.pth
+│
+│── templates/
 │   └── index.html
-│── 📂 static/
-│── 📄 requirements.txt
-│── 📄 README.md
+│
+│── static/
+│
+│── README.md
 ```
 
 ---
 
-# ⚙️ Installation & Setup
+## 🚀 Installation
 
-## 1️⃣ Clone the Repository
+### Step 1: Clone the Repository
 
 ```bash
 git clone https://github.com/bharathm1307/Deep-Learning-Implementation-of-Visual-Information-Concealment.git
 ```
 
----
-
-## 2️⃣ Navigate to Project Directory
+### Step 2: Navigate to Project Folder
 
 ```bash
 cd Deep-Learning-Implementation-of-Visual-Information-Concealment
 ```
 
----
+### Step 3: Create Virtual Environment (Optional)
 
-## 3️⃣ Install Required Dependencies
+```bash
+python -m venv venv
+```
+
+Activate virtual environment:
+
+#### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+#### Mac/Linux
+
+```bash
+source venv/bin/activate
+```
+
+### Step 4: Install Required Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -152,118 +195,94 @@ pip install -r requirements.txt
 
 ---
 
-## 4️⃣ Run the FastAPI Backend
+## ▶️ How to Run the Project
+
+### Run FastAPI Backend
 
 ```bash
 uvicorn main:app --reload
 ```
 
----
-
-## 5️⃣ Run the Streamlit Application
+### Run Streamlit Frontend
 
 ```bash
 streamlit run app.py
 ```
 
----
-
-# 🚀 How It Works
-
-### Step 1
-
-Upload an image (`.jpg`, `.jpeg`, `.png`)
-
-### Step 2
-
-The system preprocesses the image and resizes it for model compatibility.
-
-### Step 3
-
-The **EfficientNet-B0 model** analyzes image patterns.
-
-### Step 4
-
-Prediction is generated:
-
-### 🟢 Cover
-
-No hidden information detected.
-
-### 🔴 Stego
-
-Hidden information detected in the image.
-
-### Step 5
-
-Results are displayed with confidence visualization and prediction probability.
+The application will open in the browser automatically.
 
 ---
 
-# 📊 Sample Output
+## 📸 Screenshots
 
-| Uploaded Image         | Prediction |
-| ---------------------- | ---------- |
-| Normal Image           | ✅ Cover    |
-| Image with Hidden Data | ⚠️ Stego   |
+### Application Interface
 
----
+_Add your project screenshots here_
 
-# 📸 Project Screenshots
+Example:
 
-> Add screenshots of your application interface here.
-
-### 🖥️ Home Interface
-
-<img width="900" alt="Home UI" src="YOUR_SCREENSHOT_LINK">
-
-### 📈 Prediction Result
-
-<img width="900" alt="Prediction UI" src="YOUR_SCREENSHOT_LINK">
-
----
-
-# 🎯 Applications
-
-🔐 Cybersecurity & Digital Forensics
-🕵️ Hidden Information Detection
-📷 Secure Image Verification
-⚠️ Detection of Unauthorized Concealed Data
-🏢 Academic Research & Security Systems
-
----
-
-# 🔮 Future Enhancements
-
-* Multi-Class Steganography Detection
-* Improved Model Accuracy
-* Cloud Deployment Support
-* Video Steganalysis Detection
-* Enhanced Forensic Analysis Dashboard
-
----
-
-# 👥 Project Information
-
-### 📌 Project Type
-
-**Team Project**
-
-### 📌 Domain
-
-**Deep Learning + Cybersecurity + Computer Vision**
-
-### 📌 Objective
-
-To develop an intelligent deep learning system capable of detecting concealed information inside digital images.
-
----
-
-<div align="center">
-
-## ⭐ If you found this project useful, consider giving it a star!
-
-### Built with ❤️ using Deep Learning, Computer Vision & Security Intelligence
-
-</div>
+```md
+![Dashboard](screenshots/dashboard.png)
 ```
+
+---
+
+## 🧪 Testing
+
+The project was tested using:
+
+- Functional Testing
+- Model Prediction Testing
+- Backend API Testing
+- Frontend UI Testing
+- Integration Testing
+
+All core functionalities worked successfully.
+
+---
+
+## 📌 Results
+
+The system successfully achieved:
+
+✔️ Accurate hidden information detection  
+✔️ Efficient image classification  
+✔️ Real-time prediction generation  
+✔️ Improved automated steganography detection  
+✔️ User-friendly prediction interface
+
+---
+
+## 🔮 Future Improvements
+
+- Higher accuracy deep learning models  
+- Multi-class steganography detection  
+- Cloud deployment support  
+- Video steganography analysis  
+- Advanced forensic analytics dashboard  
+- Larger dataset integration
+
+---
+
+## 👥 Project Information
+
+**Project Type:** Team Project
+
+**Domain:**  
+Deep Learning + Cybersecurity + Computer Vision
+
+**Objective:**  
+To develop an intelligent system capable of detecting hidden information concealed inside digital images using Deep Learning techniques.
+
+---
+
+## 📄 License
+
+This project is developed for **academic purposes**.
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a **star ⭐ on GitHub**.
+````
